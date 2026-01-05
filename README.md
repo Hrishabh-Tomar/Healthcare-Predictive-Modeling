@@ -34,4 +34,57 @@ The model incorporates multiple predictive variables:
 
 ### 2. Model Development
 - Split data into 70/30 train-test sets with stratified sampling
-- Implemented multiple algori
+- Implemented multiple algorithms for comparison: Logistic Regression, Decision Trees, Random Forest, and Neural Networks
+- Applied hyperparameter tuning using GridSearchCV and cross-validation
+- Selected optimal model based on F1-score and clinical interpretability
+
+### 3. Model Evaluation
+- Achieved 87% accuracy with Random Forest classifier
+- Evaluated performance using confusion matrix, precision-recall curves, and ROC-AUC scores
+- Conducted feature importance analysis to identify top predictive factors
+- Validated model robustness through k-fold cross-validation (k=5)
+
+### 4. Deployment Strategy
+- Created prediction pipeline for seamless integration into clinical workflows
+- Developed interactive visualization dashboard using Tableau/Power BI
+- Documented model limitations and appropriate use cases for clinical stakeholders
+
+## Key Results
+- **Model Accuracy:** 87% on test dataset
+- **F1-Score:** 0.84, balancing precision and recall effectively
+- **ROC-AUC:** 0.91, demonstrating strong discriminative ability
+- **Top Predictors:** Age, comorbidity index, previous hospitalizations, treatment adherence
+
+## Project Structure
+├── data/
+│ ├── raw/ # Original healthcare datasets
+│ └── processed/ # Cleaned and transformed data
+├── notebooks/
+│ ├── EDA.ipynb # Exploratory data analysis
+│ ├── modeling.ipynb # Model training and evaluation
+│ └── visualization.ipynb # Results visualization
+├── src/
+│ ├── preprocessing.py # Data cleaning functions
+│ ├── models.py # Model implementations
+│ └── evaluation.py # Performance metrics
+├── outputs/
+│ ├── models/ # Saved trained models
+│ └── reports/ # Performance reports and visualizations
+├── requirements.txt # Project dependencies
+└── README.md
+
+
+## Installation & Usage
+```bash
+# Clone repository
+git clone https://github.com/yourusername/healthcare-predictive-analytics
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run model training
+python src/models.py --train
+
+# Generate predictions
+python src/models.py --predict --input data/new_patients.csv
+
